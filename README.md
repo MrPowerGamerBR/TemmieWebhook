@@ -1,7 +1,6 @@
-<div style="text-align:center">
-<h1>TemmieWebHook</h1>
-<img src ="https://media.tenor.co/images/7f4a3d7eb223757a5eb36b355948060b/raw" />
-<h2>A simple, straightforward, Discord Webhook API for Java</h2></div>
+# TemmieWebHook
+<div style="text-align:center"><img src ="https://media.tenor.co/images/7f4a3d7eb223757a5eb36b355948060b/raw" /></div>
+## A simple, straightforward, Discord Webhook API for Java
 So simple, that we don't even need a huge tutorial for it.
 
 ```
@@ -15,6 +14,7 @@ Simple as that, have fun!
 
 ### Dependencies
 Gson
+
 [HttpRequest](https://github.com/kevinsawicki/http-request) by @kevinsawicki
 
 ### Why Temmie?
