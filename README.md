@@ -1,7 +1,7 @@
 <div style="text-align:center">
-# TemmieWebHook
+<h1>TemmieWebHook</h1>
 <img src ="https://media.tenor.co/images/7f4a3d7eb223757a5eb36b355948060b/raw" />
-## A simple, straightfoward, Discord Webhook API for Java</div>
+<h2>A simple, straightforward, Discord Webhook API for Java</h2></div>
 So simple, that we don't even need a huge tutorial for it.
 
 ```
