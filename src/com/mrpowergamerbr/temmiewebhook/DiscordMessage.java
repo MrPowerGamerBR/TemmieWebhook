@@ -1,9 +1,15 @@
 package com.mrpowergamerbr.temmiewebhook;
 
+/**
+ * A discord message
+ * 
+ * @author MrPowerGamerBR
+ */
 public class DiscordMessage {
 	String username;
 	String content;
 	String avatar_url;
+	boolean tts;
 	
 	public DiscordMessage() {
 		
@@ -13,6 +19,13 @@ public class DiscordMessage {
 		setUsername(username);
 		setContent(content);
 		setAvatarUrl(avatar_url);
+	}
+	
+	public DiscordMessage(String username, String content, String avatar_url, boolean tts) {
+		setUsername(username);
+		setContent(content);
+		setAvatarUrl(avatar_url);
+		setTextToSpeech(tts);
 	}
 	
 	public void setUsername(String username) {
@@ -27,6 +40,10 @@ public class DiscordMessage {
 		this.avatar_url = avatar_url;
 	}
 	
+	public void setTextToSpeech(boolean tts) {
+		this.tts = tts;
+	}
+	
 	public String getUsername() {
 		return username;
 	}
@@ -37,5 +54,9 @@ public class DiscordMessage {
 	
 	public String getAvatarUrl() {
 		return avatar_url;
+	}
+	
+	public boolean isTextToSpeech() {
+		return tts;
 	}
 }
