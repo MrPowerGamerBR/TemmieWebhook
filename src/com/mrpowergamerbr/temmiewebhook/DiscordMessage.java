@@ -1,8 +1,16 @@
 package com.mrpowergamerbr.temmiewebhook;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
+import com.mrpowergamerbr.temmiewebhook.embed.AuthorEmbed;
+import com.mrpowergamerbr.temmiewebhook.embed.FieldEmbed;
+import com.mrpowergamerbr.temmiewebhook.embed.FooterEmbed;
+import com.mrpowergamerbr.temmiewebhook.embed.ImageEmbed;
+import com.mrpowergamerbr.temmiewebhook.embed.ProviderEmbed;
+import com.mrpowergamerbr.temmiewebhook.embed.ThumbnailEmbed;
+import com.mrpowergamerbr.temmiewebhook.embed.VideoEmbed;
 
 import lombok.*;
 
@@ -13,6 +21,8 @@ import lombok.*;
  */
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
 public class DiscordMessage {
 	String username;
 	String content;
@@ -20,7 +30,7 @@ public class DiscordMessage {
 	String avatarUrl;
 	@SerializedName("tts")
 	boolean textToSpeech;
-	ArrayList<DiscordEmbed> embeds = new ArrayList<DiscordEmbed>();
+	List<DiscordEmbed> embeds = new ArrayList<DiscordEmbed>();
 	
 	public DiscordMessage() {
 		

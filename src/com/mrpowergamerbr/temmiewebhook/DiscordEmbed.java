@@ -1,7 +1,9 @@
 package com.mrpowergamerbr.temmiewebhook;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import com.mrpowergamerbr.temmiewebhook.DiscordMessage.DiscordMessageBuilder;
 import com.mrpowergamerbr.temmiewebhook.embed.*;
 
 import lombok.*;
@@ -13,6 +15,8 @@ import lombok.*;
  */
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
 public class DiscordEmbed {
 	String title;
 	String type;
@@ -26,7 +30,7 @@ public class DiscordEmbed {
 	VideoEmbed video;
 	ProviderEmbed provider;
 	AuthorEmbed author;
-	ArrayList<FieldEmbed> fields = new ArrayList<FieldEmbed>();
+	List<FieldEmbed> fields = new ArrayList<FieldEmbed>();
 	
 	public DiscordEmbed() {
 		

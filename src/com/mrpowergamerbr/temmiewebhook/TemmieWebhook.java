@@ -23,12 +23,4 @@ public class TemmieWebhook {
 			System.out.println(response);
 		}
 	}
-
-	public void sendEmbed() {
-		DiscordEmbed embed = new DiscordEmbed();
-		embed.title = "Embed Test";
-		embed.description = "Hello World!";
-		DiscordMessage dm = new DiscordMessage("Temmie", "hOI!", "https://img04.deviantart.net/360e/i/2015/300/9/d/temmie_by_ilovegir64-d9elpal.png");
-		sendMessage(dm);
-	}
 }

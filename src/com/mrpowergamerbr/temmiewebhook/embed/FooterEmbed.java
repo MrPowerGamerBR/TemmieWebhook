@@ -4,6 +4,9 @@ import lombok.*;
 
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class FooterEmbed {
 	String text;
 	String icon_url;
