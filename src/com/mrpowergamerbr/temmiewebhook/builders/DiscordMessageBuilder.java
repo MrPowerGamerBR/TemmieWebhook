@@ -1,5 +1,6 @@
 package com.mrpowergamerbr.temmiewebhook.builders;
 
+import com.mrpowergamerbr.temmiewebhook.DiscordEmbed;
 import com.mrpowergamerbr.temmiewebhook.DiscordMessage;
 
 /**
@@ -12,6 +13,7 @@ public class DiscordMessageBuilder {
 	String content;
 	String avatar_url;
 	boolean tts;
+	DiscordEmbed[] embeds;
 	
 	public DiscordMessageBuilder() {
 		
@@ -37,7 +39,16 @@ public class DiscordMessageBuilder {
 		return this;
 	}
 	
+	public DiscordMessageBuilder withEmbed(DiscordEmbed... embeds) {
+		this.embeds = embeds;
+		return this;
+	}
+	
 	public DiscordMessage build() {
-		return new DiscordMessage(username, content, avatar_url, tts);
+		DiscordMessage dm = new DiscordMessage(username, content, avatar_url, tts);
+		for (DiscordEmbed embed : embeds) {
+			dm.getEmbeds().add(embed);
+		}
+		return dm;
 	}
 }
