@@ -8,9 +8,10 @@ import com.mrpowergamerbr.temmiewebhook.DiscordMessage;
  * @author MrPowerGamerBR
  */
 public class DiscordMessageBuilder {
-	public String username;
-	public String content;
-	public String avatar_url;
+	String username;
+	String content;
+	String avatar_url;
+	boolean tts;
 	
 	public DiscordMessageBuilder() {
 		
@@ -31,7 +32,12 @@ public class DiscordMessageBuilder {
 		return this;
 	}
 	
+	public DiscordMessageBuilder withTextToSpeech(boolean tts) {
+		this.tts = tts;
+		return this;
+	}
+	
 	public DiscordMessage build() {
-		return new DiscordMessage(username, content, avatar_url);
+		return new DiscordMessage(username, content, avatar_url, tts);
 	}
 }
