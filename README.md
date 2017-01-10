@@ -17,5 +17,7 @@ Gson
 
 [HttpRequest](https://github.com/kevinsawicki/http-request) by @kevinsawicki
 
+lombok
+
 ### Why Temmie?
 Why not Temmie?
