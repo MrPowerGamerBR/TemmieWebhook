@@ -22,7 +22,7 @@ public class DiscordEmbed {
 	VideoEmbed video;
 	ProviderEmbed provider;
 	AuthorEmbed author;
-	ArrayList<FieldEmbed> fields;
+	ArrayList<FieldEmbed> fields = new ArrayList<FieldEmbed>();
 	
 	public DiscordEmbed() {
 		
