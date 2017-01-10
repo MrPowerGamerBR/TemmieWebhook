@@ -19,9 +19,7 @@ public class DiscordMessage {
 	}
 	
 	public DiscordMessage(String username, String content, String avatar_url) {
-		setUsername(username);
-		setContent(content);
-		setAvatarUrl(avatar_url);
+		this(username, content, avatar_url, false);
 	}
 	
 	public DiscordMessage(String username, String content, String avatar_url, boolean tts) {
