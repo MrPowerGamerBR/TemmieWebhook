@@ -1,5 +1,7 @@
 package com.mrpowergamerbr.temmiewebhook;
 
+import java.util.ArrayList;
+
 /**
  * A discord message
  * 
@@ -10,6 +12,7 @@ public class DiscordMessage {
 	String content;
 	String avatar_url;
 	boolean tts;
+	ArrayList<DiscordEmbed> embeds = new ArrayList<DiscordEmbed>();
 	
 	public DiscordMessage() {
 		
@@ -58,5 +61,9 @@ public class DiscordMessage {
 	
 	public boolean isTextToSpeech() {
 		return tts;
+	}
+	
+	public ArrayList<DiscordEmbed> getEmbeds() {
+		return embeds;
 	}
 }
