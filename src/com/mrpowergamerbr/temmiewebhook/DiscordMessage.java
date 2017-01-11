@@ -48,6 +48,10 @@ public class DiscordMessage {
 	}
 	
 	public void setUsername(String username) {
-		this.username = username.substring(0, Math.min(32, username.length()));
+		if (username != null) {
+			this.username = username.substring(0, Math.min(32, username.length()));
+		} else {
+			this.username = null;
+		}
 	}
 }
