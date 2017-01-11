@@ -22,6 +22,7 @@ public class DiscordMessage {
 	String avatarUrl;
 	@SerializedName("tts")
 	boolean textToSpeech;
+	@Singular
 	List<DiscordEmbed> embeds = new ArrayList<DiscordEmbed>();
 	
 	public DiscordMessage() {
