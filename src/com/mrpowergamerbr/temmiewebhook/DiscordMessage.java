@@ -22,29 +22,37 @@ public class DiscordMessage {
 	String avatarUrl;
 	@SerializedName("tts")
 	boolean textToSpeech;
-	@Singular
 	List<DiscordEmbed> embeds = new ArrayList<DiscordEmbed>();
-	
+
 	public DiscordMessage() {
-		
+
 	}
-	
+
 	public DiscordMessage(String username, String content, String avatar_url) {
 		this(username, content, avatar_url, false);
 	}
-	
+
 	public DiscordMessage(String username, String content, String avatar_url, boolean tts) {
 		setUsername(username);
 		setContent(content);
 		setAvatarUrl(avatar_url);
 		setTextToSpeech(tts);
 	}
-	
+
 	public void setUsername(String username) {
 		if (username != null) {
 			this.username = username.substring(0, Math.min(32, username.length()));
 		} else {
 			this.username = null;
+		}
+	}
+
+	public static class DiscordMessageBuilder {
+		List<DiscordEmbed> embeds = new ArrayList<DiscordEmbed>();
+		
+		public DiscordMessageBuilder embed(DiscordEmbed embed) {
+			embeds.add(embed);
+			return this;
 		}
 	}
 }

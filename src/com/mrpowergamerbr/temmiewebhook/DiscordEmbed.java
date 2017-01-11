@@ -15,7 +15,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.Singular;
 
 /**
  * A discord embed
@@ -39,7 +38,6 @@ public class DiscordEmbed {
 	VideoEmbed video;
 	ProviderEmbed provider;
 	AuthorEmbed author;
-	@Singular
 	List<FieldEmbed> fields = new ArrayList<FieldEmbed>();
 	
 	public DiscordEmbed() {
@@ -63,10 +61,20 @@ public class DiscordEmbed {
 				.content("")
 				.embed(embed)
 				.build();
+		
 		return dm;
 	}
 	
 	public DiscordMessage toDiscordMessage(String username, String avatarUrl) {
 		return DiscordEmbed.toDiscordMessage(this, username, avatarUrl);
+	}
+	
+	public static class DiscordEmbedBuilder {
+		List<FieldEmbed> fields = new ArrayList<FieldEmbed>();
+		
+		public DiscordEmbedBuilder field(FieldEmbed field) {
+			fields.add(field);
+			return this;
+		}
 	}
 }
