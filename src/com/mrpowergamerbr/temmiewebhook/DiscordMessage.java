@@ -4,14 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
-import com.mrpowergamerbr.temmiewebhook.embed.AuthorEmbed;
-import com.mrpowergamerbr.temmiewebhook.embed.FieldEmbed;
-import com.mrpowergamerbr.temmiewebhook.embed.FooterEmbed;
-import com.mrpowergamerbr.temmiewebhook.embed.ImageEmbed;
-import com.mrpowergamerbr.temmiewebhook.embed.ProviderEmbed;
-import com.mrpowergamerbr.temmiewebhook.embed.ThumbnailEmbed;
-import com.mrpowergamerbr.temmiewebhook.embed.VideoEmbed;
-
 import lombok.*;
 
 /**
