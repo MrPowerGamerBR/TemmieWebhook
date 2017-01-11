@@ -9,7 +9,7 @@ public class TemmieWebhook {
 	boolean blockMainThread = false;
 
 	public TemmieWebhook(String url) {
-		this.url = url;
+		this(url, false);
 	}
 	
 	public TemmieWebhook(String url, boolean blocking) {
