@@ -1,5 +1,6 @@
 # TemmieWebhook
-<p align="center"><img src ="https://media.tenor.co/images/7f4a3d7eb223757a5eb36b355948060b/raw" /></p>
+<p align="center"><img src ="https://media.tenor.co/images/7f4a3d7eb223757a5eb36b355948060b/raw"></img></p>
+
 ## A simple, straightforward, Discord Webhook API for Java
 So simple, that we don't even need a huge tutorial for it.
 
