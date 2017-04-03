@@ -2,6 +2,7 @@ package com.mrpowergamerbr.temmiewebhook;
 
 import com.github.kevinsawicki.http.HttpRequest;
 import com.google.gson.Gson;
+import com.mrpowergamerbr.temmiewebhook.exceptions.WebhookException;
 
 public class TemmieWebhook {
 	public static final Gson gson = new Gson();
@@ -11,7 +12,7 @@ public class TemmieWebhook {
 	public TemmieWebhook(String url) {
 		this(url, false);
 	}
-	
+
 	public TemmieWebhook(String url, boolean blocking) {
 		this.url = url;
 		this.blockMainThread = blocking;
@@ -29,24 +30,28 @@ public class TemmieWebhook {
 
 				if (!strResponse.isEmpty()) {
 					Response response = gson.fromJson(strResponse, Response.class);
-					if (response.getMessage().equals("You are being rate limited.")) {
-						// If we are rate limited, let's wait a few seconds before sending
-						// the message again.
-						try {
-							// TODO: Should we really block the main thread just to send the message?
-							// Blocking the main thread isn't a good idea... at all...
-							Thread.sleep(response.getRetryAfter());
-						} catch (InterruptedException e) {
-							e.printStackTrace();
+					try {
+						if (response.getMessage().equals("You are being rate limited.")) {
+							// If we are rate limited, let's wait a few seconds before sending
+							// the message again.
+							try {
+								// TODO: Should we really block the main thread just to send the message?
+								// Blocking the main thread isn't a good idea... at all...
+								Thread.sleep(response.getRetryAfter());
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							sendMessage(dm);
+						} else {
+							throw new WebhookException(response.getMessage());
 						}
-						sendMessage(dm);
-					} else {
-						System.out.println(response);
+					} catch (Exception e) {
+						throw new WebhookException(strResponse);
 					}
 				}
 			}
 		};
-		
+
 		if (blockMainThread) {
 			r.run();
 		} else {
